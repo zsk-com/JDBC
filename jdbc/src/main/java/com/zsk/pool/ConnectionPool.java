@@ -1,4 +1,4 @@
-package com.zsk.poor;
+package com.zsk.pool;
 
 
 import com.zsk.uilt.Runtime;
@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * 连接池
  */
-public class ConnectionPoor{
+public class ConnectionPool {
 
     //乐观锁实现并发
     private ReentrantLock lock=new ReentrantLock();
@@ -20,17 +20,17 @@ public class ConnectionPoor{
      *     设置单例模式
      */
     //1.私有的构造方法
-    private ConnectionPoor(){
+    private ConnectionPool(){
     }
     //2.存在一个当前类私有的静态的对象
-    private volatile static ConnectionPoor poor;//volatile是为了防止指令重排序
+    private volatile static ConnectionPool poor;//volatile是为了防止指令重排序
     //3.提供一个获取唯一对象的方法
     //懒汉式单例模式
-    public static ConnectionPoor getPoor(){//双重if判断
+    public static ConnectionPool getPoor(){//双重if判断
         if (poor==null){
-            synchronized(ConnectionPoor.class){
+            synchronized(ConnectionPool.class){
                 if (poor==null){
-                    poor=new ConnectionPoor();
+                    poor=new ConnectionPool();
                 }
             }
         }
