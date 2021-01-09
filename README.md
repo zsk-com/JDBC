@@ -57,7 +57,7 @@
 
 ## 项目描述：
 
-本项目是基于JDBC进行封装的连接池，为了加强自己的基础和能更深入解框架的本质， 自己实现了框架的常用功 能。本质是**提高连接性能**、让**连接可复用**、减少代码的**冗余**。
+本项目是基于JDBC进行封装的连接池，为了加强自己的基础和能更深入解框架的本质， 自己实现了框架的常用功能。本质是**提高连接性能**、让**连接可复用**、减少代码的**冗余**。
 
 ## 项目核心
 
@@ -73,11 +73,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.47</version>
-        </dependency>
+    </dependency>
 ```
 
 ```java
-在classpath是创建configure.properties
+在classpath下创建configure.properties文件
     
     
 forName=com.mysql.jdbc.Driver 
@@ -97,7 +97,7 @@ nuberConn=2 #最大连接数
         PreparedStatement pstat = conn.prepareStatement(sql);
         //执行数据库操作
         pstat.executeQuery();
-		//关闭连接 实际上不是真正的关闭
+	//关闭连接 实际上不是真正的关闭
         conn.close();
 
 ```
