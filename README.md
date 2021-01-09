@@ -61,7 +61,7 @@
 
 ## 项目核心
 
-核心逻辑在该类：/src/main/java/com/zsk/pool/**ConnectionPoor**.java ，该类下有详细的说明，想深入理解的同学可以看该类下的源码哦
+核心逻辑在该类：/src/main/java/com/zsk/pool/**ConnectionPool**.java ，该类下有详细的说明，想深入理解的同学可以看该类下的源码哦
 
 
 
