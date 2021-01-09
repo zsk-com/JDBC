@@ -80,11 +80,11 @@
 在classpath是创建configure.properties
     
     
-forName=com.mysql.jdbc.Driver
+forName=com.mysql.jdbc.Driver 
 url=jdbc:mysql://localhost:3306/atm
-user=root
-apassword=root
-nuberConn=2
+user=root # 密码
+apassword=root #账号
+nuberConn=2 #最大连接数
     
 备注：内容根据自己连接的数据库进行填写
 
@@ -92,7 +92,7 @@ nuberConn=2
 
 ```java
      	//获取连接
-       Connection conn = ConnectionPoor.getPoor().getConnection();
+       Connection conn = ConnectionPool.getPool().getConnection();
         //创建状态参数
         PreparedStatement pstat = conn.prepareStatement(sql);
         //执行数据库操作
